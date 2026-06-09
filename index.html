@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charSet="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+		data-precedence="default" />
+	<title>Victorious Network — AI-Driven Agency for Technology Storytelling</title>
+	<meta property="og:type" content="website" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Victorious Network — Experiential &amp; Holographic Productions" />
+	<meta name="twitter:description"
+		content="Victorious Network is a premium experiential and holographic production company creating unforgettable live, on-camera and on-phone moments." />
+	<meta property="og:image"
+		content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f11da558-31a2-495c-afc6-5347f67d2843/id-preview-d6bc0bde--52746724-b16a-4c26-a6ac-c1eb203ece5f.lovable.app-1780994341526.png" />
+	<meta name="twitter:image"
+		content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f11da558-31a2-495c-afc6-5347f67d2843/id-preview-d6bc0bde--52746724-b16a-4c26-a6ac-c1eb203ece5f.lovable.app-1780994341526.png" />
+	<meta name="description"
+		content="Η πρώτη AI-driven εταιρεία στην Ευρώπη που συνδυάζει Τεχνητή Νοημοσύνη, Δημόσιες Σχέσεις και Marketing για την καινοτομία και τη ρομποτική." />
+	<meta property="og:title" content="Victorious Network" />
+	<meta property="og:description"
+		content="Elevate. Innovate. Triumph. AI-driven στρατηγική, PR, ολογράμματα και βιωματικές εμπειρίες για τεχνολογικές εταιρείες." />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+	<style>
+		@font-face {
+			font-family: 'CameraPlainVariable';
+			src: url('https://cdn.gpteng.co/mcp-widgets/v1/fonts/CameraPlainVariable.woff2') format('woff2');
+			font-weight: 100 900;
+			font-style: normal;
+			font-display: swap;
+		}
+
+		#lovable-badge {
+			--badge-bg: #1b1b1b;
+			--badge-text: #c5c1b9;
+			--badge-text-hover: #dcdad5;
+			--badge-radius: 6px;
+			--badge-padding: 8px;
+			--badge-gap: 6px;
+			--badge-shadow:
+				0 0 0 1px rgba(0, 0, 0, 0.88),
+				0 1px 0 0 rgba(0, 0, 0, 0.04),
+				0 2px 2px -1px rgba(0, 0, 0, 0.08),
+				0 4px 4px -2px rgba(0, 0, 0, 0.08),
+				0 8px 8px -4px rgba(0, 0, 0, 0.08),
+				0 16px 16px -8px rgba(0, 0, 0, 0.08);
+			--badge-transition-duration: 0.2s;
+			--badge-transition-easing: cubic-bezier(0.16, 1, 0.32, 1);
+			--focus-color: #575ECF;
+			--focus-offset: 2px;
+			--focus-width: 2px;
+
+			position: fixed;
+			bottom: 12px;
+			right: 12px;
+			height: 24px;
+			display: flex;
+			align-items: center;
+			z-index: 1000000;
+			background-color: var(--badge-bg) !important;
+			color: var(--badge-text) !important;
+			border-radius: var(--badge-radius);
+			box-shadow: var(--badge-shadow) !important;
+			font-size: 12px;
+			font-family: CameraPlainVariable, "CameraPlainVariable Fallback", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+			font-weight: 400 !important;
+			text-transform: none !important;
+			font-feature-settings: normal !important;
+			transform: translateZ(0);
+			will-change: transform, opacity;
+		}
+
+		#lovable-badge-cta {
+			display: flex;
+			align-items: center;
+			gap: var(--badge-gap);
+			padding: 0 var(--badge-padding);
+			height: 100%;
+			color: inherit;
+			text-decoration: none;
+			white-space: nowrap;
+			border-radius: var(--badge-radius) 0 0 var(--badge-radius);
+			transition:
+				background-color var(--badge-transition-duration) ease,
+				color var(--badge-transition-duration) ease,
+				transform 0.1s ease;
+		}
+
+		#lovable-badge-cta:hover {
+			background: rgba(255, 255, 255, 0.04);
+			color: var(--badge-text-hover);
+		}
+
+		#lovable-badge-cta:active {
+			transform: scale(0.98);
+		}
+
+		#lovable-badge-cta:focus {
+			outline: none;
+		}
+
+		#lovable-badge-cta:focus-visible {
+			outline: var(--focus-width) solid var(--focus-color);
+			outline-offset: var(--focus-offset);
+			z-index: 1;
+		}
+
+		#lovable-badge-text {
+			line-height: 1;
+		}
+
+		#lovable-badge-divider {
+			width: 1px;
+			height: 24px;
+			background-color: rgba(255, 255, 255, 0.04);
+			flex-shrink: 0;
+		}
+
+		#lovable-badge-close {
+			width: 24px;
+			height: 24px;
+			min-width: 24px;
+			min-height: 24px;
+			cursor: pointer;
+			background: none;
+			border: none;
+			padding: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 0 var(--badge-radius) var(--badge-radius) 0;
+			flex-shrink: 0;
+			transition:
+				background-color var(--badge-transition-duration) ease,
+				transform 0.1s ease;
+		}
+
+		#lovable-badge-close:hover {
+			background: rgba(255, 255, 255, 0.04);
+		}
+
+		#lovable-badge-close:active {
+			transform: scale(0.92);
+		}
+
+		#lovable-badge-close:focus {
+			outline: none;
+		}
+
+		#lovable-badge-close:focus-visible {
+			outline: var(--focus-width) solid var(--focus-color);
+			outline-offset: calc(var(--focus-offset) * -1);
+			z-index: 1;
+		}
+
+		#lovable-badge-close svg path {
+			fill: var(--badge-text);
+			transition: fill var(--badge-transition-duration) ease;
+		}
+
+		#lovable-badge-close:hover svg path {
+			fill: var(--badge-text-hover);
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+
+			#lovable-badge-cta,
+			#lovable-badge-close,
+			#lovable-badge-close svg path {
+				transition: none;
+			}
+
+			#lovable-badge-cta:active,
+			#lovable-badge-close:active {
+				transform: none;
+			}
+		}
+
+		@media (prefers-contrast: high) {
+			#lovable-badge {
+				--badge-bg: #000;
+				--badge-text: #fff;
+				--badge-text-hover: #fff;
+				border: 2px solid currentColor;
+			}
+
+			#lovable-badge-cta:focus-visible,
+			#lovable-badge-close:focus-visible {
+				outline-width: 3px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<!--$-->
+	<div class="min-h-screen text-foreground">
+		<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent">
+			<div class="mx-auto max-w-7xl px-6 md:px-10 h-20 flex items-center justify-between">
+				<a href="#top" class="flex items-center gap-3">
+					<img src="/assets/victorious-logo.png" alt="Victorious Network" class="h-12 w-12 object-contain" />
+					<span class="hidden sm:block font-display text-lg tracking-wide text-gold-gradient">Victorious
+						Network</span>
+				</a>
+				<nav
+					class="hidden md:flex items-center gap-10 text-sm uppercase tracking-[0.18em] text-muted-foreground">
+					<a href="#about" class="hover:text-gold-soft transition">Ποιοι Είμαστε</a>
+					<a href="#services" class="hover:text-gold-soft transition">Υπηρεσίες</a>
+					<a href="#ai" class="hover:text-gold-soft transition">AI Clones</a>
+					<a href="#platform" class="hover:text-gold-soft transition">Platform</a>
+					<a href="#projects-globe" class="hover:text-gold-soft transition">Projects</a>
+					<a href="#contact" class="hover:text-gold-soft transition">Επικοινωνία</a>
+				</nav>
+				<a href="#contact"
+					class="hidden md:inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] px-5 py-3 rounded-full border border-gold-soft text-gold-soft hover:bg-gold-gradient hover:text-primary-foreground hover:border-transparent transition">Ξεκινήστε
+					→</a>
+			</div>
+		</header>
+		<section id="top" class="relative min-h-screen flex items-end overflow-hidden">
+			<!-- Glass Vault Wrapper (Intro Reveal) -->
+			<div class="glass-vault-wrapper hero-vault-wrapper">
+				<div class="glass-container" id="glass-vault-container">
+					<!-- 3D Depth Background Panel -->
+					<div class="glass-depth-bg" id="glass-depth-bg">
+						<div class="depth-grid">
+						</div>
+						<div class="depth-circles">
+						</div>
+					</div>
+					<!-- Floating 3D Geometric Logo (Made of CSS Layers) -->
+					<div class="glass-logo-element" id="glass-logo-element">
+						<div class="logo-layer logo-shadow">
+						</div>
+						<div class="logo-layer logo-base">
+							<div class="logo-text-wrapper">
+								<div class="logo-title-top text-3d-box" data-text="VICTORIOUS">VICTORIOUS</div>
+								<div class="logo-title-bottom text-3d-box" data-text="NETWORK">NETWORK</div>
+							</div>
+						</div>
+						<div class="logo-layer logo-accent">
+						</div>
+					</div>
+					<!-- Glass Shards / Shatter layers -->
+					<div class="glass-face" id="glass-face">
+						<div class="glass-reflection">
+						</div>
+						<div class="glass-shards-wrapper" id="glass-shards-wrapper">
+						</div>
+					</div>
+					<div class="glass-hint" id="glass-hint">CLICK TO SHATTER THE GLASS</div>
+				</div>
+			</div>
+			<img src="/assets/hero-ai-network-DFGmTSbl.jpg"
+				alt="Δίκτυο τεχνητής νοημοσύνης με χρυσούς κόμβους σε βαθύ μπλε background" width="1920" height="1280"
+				class="absolute inset-0 w-full h-full object-cover opacity-70" />
+			<div class="absolute inset-0 bg-gradient-to-b from-background/80 via-background/30 to-background">
+			</div>
+			<div
+				class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,oklch(0.1_0.04_260/0.7)_100%)]">
+			</div>
+			<div class="relative mx-auto max-w-7xl px-6 md:px-10 pb-24 md:pb-32 pt-40 w-full hero-content-grid"
+				style="opacity: 0; pointer-events: none;">
+				<p class="text-xs md:text-sm uppercase tracking-[0.4em] text-gold-soft mb-8 animate-shine inline-block">
+					☆ Elevate · Innovate · Triumph</p>
+				<h1 class="font-display text-[13vw] md:text-[8.5vw] leading-[0.88] text-foreground max-w-[16ch]">The
+					first <span class="italic text-gold-gradient">AI-Driven</span> agency for <span
+						class="italic text-gold-gradient">technology storytelling.</span>
+				</h1>
+				<div class="mt-12 grid md:grid-cols-2 gap-8 items-end">
+					<p class="text-base md:text-lg text-muted-foreground max-w-md leading-relaxed">Η <strong
+							class="text-foreground">Victorious Network</strong> είναι η πρώτη εταιρεία στην Ευρώπη που
+						συνδυάζει την Τεχνητή Νοημοσύνη με τις Δημόσιες Σχέσεις και το Marketing — ειδικά για την
+						καινοτομία και τη ρομποτική.</p>
+					<div class="flex flex-wrap gap-4 md:justify-end">
+						<a href="#services"
+							class="bg-gold-gradient text-primary-foreground px-7 py-4 rounded-full text-sm uppercase tracking-[0.2em] font-medium hover:opacity-90 transition">Οι
+							Υπηρεσίες μας</a>
+						<a href="#contact"
+							class="border border-gold-soft text-gold-soft px-7 py-4 rounded-full text-sm uppercase tracking-[0.2em] hover:bg-gold-soft/10 transition">Brief
+							us</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="border-y border-gold-soft/40 py-6 overflow-hidden bg-navy-deep/40">
+			<div class="flex gap-16 animate-marquee whitespace-nowrap font-display text-2xl md:text-4xl">
+				<div class="flex gap-16 shrink-0">
+					<span class="text-foreground/80">AI Strategy</span>
+					<span class="text-gold-soft">★</span>
+					<span class="text-foreground/80">Public Relations</span>
+					<span class="text-gold-soft">★</span>
+					<span class="text-foreground/80">Holograms</span>
+					<span class="text-gold-soft">★</span>
+					<span class="text-foreground/80">Automation</span>
+					<span class="text-gold-soft">★</span>
+					<span class="text-foreground/80">Storytelling</span>
+					<span class="text-gold-soft">★</span>
+					<span class="text-foreground/80">Ecosystem</span>
+					<span class="text-gold-soft">★</span>
+				</div>
+				<div class="flex gap-16 shrink-0">
+					<span class="text-foreground/80">AI Strategy</span>
+					<span class="text-gold-soft">★</span>
+					<span class="text-foreground/80">Public Relations</span>
+					<span class="text-gold-soft">★</span>
+					<span class="text-foreground/80">Holograms</span>
+					<span class="text-gold-soft">★</span>
+					<span class="text-foreground/80">Automation</span>
+					<span class="text-gold-soft">★</span>
+					<span class="text-foreground/80">Storytelling</span>
+					<span class="text-gold-soft">★</span>
+					<span class="text-foreground/80">Ecosystem</span>
+					<span class="text-gold-soft">★</span>
+				</div>
+			</div>
+		</section>
+		<section id="about" class="mx-auto max-w-7xl px-6 md:px-10 py-32 md:py-40">
+			<div class="grid md:grid-cols-12 gap-10 items-start">
+				<p class="md:col-span-3 text-xs uppercase tracking-[0.3em] text-gold-soft">(01) Η ταυτότητά μας</p>
+				<div class="md:col-span-9">
+					<h2 class="font-display text-4xl md:text-6xl leading-[1.05] max-w-4xl">Ένας <em
+							class="text-gold-gradient not-italic font-medium">κόμβος αριστείας</em> που συνδέει την
+						τεχνολογία με την κοινωνία.</h2>
+					<p class="mt-8 text-muted-foreground text-lg max-w-3xl leading-relaxed">Ενισχύουμε τον αντίκτυπο
+						πρωτοπόρων τεχνολογίας διεθνώς, συνδυάζοντας AI-driven στρατηγική, στοχευμένη επικοινωνία και
+						παγκόσμια εμβέλεια.</p>
+				</div>
+			</div>
+			<div class="mt-20 grid md:grid-cols-3 gap-8 border-t border-gold-soft/30 pt-12">
+				<div
+					class="group relative p-8 rounded-lg border border-gold-soft/20 bg-card/40 backdrop-blur hover:border-gold-soft/60 transition">
+					<div class="text-gold-soft font-display text-sm tracking-[0.3em] mb-6">0<!-- -->1</div>
+					<h3 class="font-display text-3xl mb-4 text-gold-gradient">Καινοτομία</h3>
+					<p class="text-muted-foreground leading-relaxed">Χρησιμοποιούμε εργαλεία AI για να δημιουργούμε
+						στρατηγικές που προηγούνται της εποχής τους.</p>
+				</div>
+				<div
+					class="group relative p-8 rounded-lg border border-gold-soft/20 bg-card/40 backdrop-blur hover:border-gold-soft/60 transition">
+					<div class="text-gold-soft font-display text-sm tracking-[0.3em] mb-6">0<!-- -->2</div>
+					<h3 class="font-display text-3xl mb-4 text-gold-gradient">Αξιοπιστία</h3>
+					<p class="text-muted-foreground leading-relaxed">Χτίζουμε σχέσεις εμπιστοσύνης μέσα από διαφανή
+						επικοινωνία και μετρήσιμα αποτελέσματα.</p>
+				</div>
+				<div
+					class="group relative p-8 rounded-lg border border-gold-soft/20 bg-card/40 backdrop-blur hover:border-gold-soft/60 transition">
+					<div class="text-gold-soft font-display text-sm tracking-[0.3em] mb-6">0<!-- -->3</div>
+					<h3 class="font-display text-3xl mb-4 text-gold-gradient">Αριστεία</h3>
+					<p class="text-muted-foreground leading-relaxed">Δεν στοχεύουμε απλώς στην επιτυχία, αλλά στη
+						δημιουργία ενός Victorious αποτυπώματος.</p>
+				</div>
+			</div>
+		</section>
+		<section id="services" class="bg-navy-deep/60 py-24 md:py-32 border-y border-gold-soft/30">
+			<div class="mx-auto max-w-7xl px-6 md:px-10">
+				<div class="flex items-end justify-between mb-16 gap-6 flex-wrap">
+					<div>
+						<p class="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">(02) Υπηρεσίες</p>
+						<h2 class="font-display text-5xl md:text-7xl">Τι <em
+								class="text-gold-gradient not-italic">κάνουμε.</em>
+						</h2>
+					</div>
+					<p class="text-muted-foreground max-w-md text-base">Από στρατηγική Market Entry μέχρι AI ολογράμματα
+						— όλες οι ικανότητες μιας μοντέρνας tech agency, κάτω από μία στέγη.</p>
+				</div>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<!-- Card 1 -->
+					<div class="services-card group">
+						<img src="/assets/service-market-HHuUv8ro.jpg" alt="Market Entry" loading="lazy" width="1280"
+							height="960" class="services-card-img" />
+						<div class="services-card-overlay">
+						</div>
+						<div class="services-card-content">
+							<div class="text-gold-soft font-display text-xs tracking-[0.3em] mb-2">01</div>
+							<h3 class="font-display text-2xl md:text-3xl mb-3 text-gold-gradient">Market Entry</h3>
+							<p class="text-sm text-muted-foreground leading-relaxed">Σχεδιάζουμε τη διείσδυση
+								τεχνολογικών εταιρειών στην Ελλάδα, την Κύπρο και την υπόλοιπη Ευρώπη. Αναλύουμε τη
+								συμπεριφορά του κοινού και τις τάσεις του κλάδου για να ξεκλειδώσουμε νέες ευκαιρίες
+								ανάπτυξης.</p>
+						</div>
+					</div>
+					<!-- Card 2 -->
+					<div class="services-card group">
+						<img src="/assets/service-software-Dmk1gJZP.jpg" alt="Επικοινωνία &amp; Branding" loading="lazy"
+							width="1280" height="960" class="services-card-img" />
+						<div class="services-card-overlay">
+						</div>
+						<div class="services-card-content">
+							<div class="text-gold-soft font-display text-xs tracking-[0.3em] mb-2">02</div>
+							<h3 class="font-display text-2xl md:text-3xl mb-3 text-gold-gradient">Επικοινωνία &amp;
+								Branding</h3>
+							<p class="text-sm text-muted-foreground leading-relaxed">Public Relations, διαχείριση φήμης,
+								press strategy και media outreach. Δημιουργούμε ισχυρή οπτική ταυτότητα και storytelling
+								που συνδέει συναισθηματικά το brand σας με το κοινό.</p>
+						</div>
+					</div>
+					<!-- Card 3 -->
+					<div class="services-card group">
+						<img src="/assets/service-market-HHuUv8ro.jpg" alt="Ecosystem Integration" loading="lazy"
+							width="1280" height="960" class="services-card-img" />
+						<div class="services-card-overlay">
+						</div>
+						<div class="services-card-content">
+							<div class="text-gold-soft font-display text-xs tracking-[0.3em] mb-2">03</div>
+							<h3 class="font-display text-2xl md:text-3xl mb-3 text-gold-gradient">Ecosystem Integration
+							</h3>
+							<p class="text-sm text-muted-foreground leading-relaxed">Συνδέουμε την εταιρεία σας με το
+								οικοσύστημα καινοτομίας: Υπουργεία &amp; κυβερνητικούς φορείς, Πανεπιστήμια &amp;
+								ερευνητικά κέντρα, Επενδυτές &amp; incubators.</p>
+						</div>
+					</div>
+					<!-- Card 4 -->
+					<div class="services-card group">
+						<img src="/assets/service-clones-B-9Pt5dn.jpg" alt="AI Clones &amp; Ολογράμματα" loading="lazy"
+							width="1280" height="960" class="services-card-img" />
+						<div class="services-card-overlay">
+						</div>
+						<div class="services-card-content">
+							<div class="text-gold-soft font-display text-xs tracking-[0.3em] mb-2">04</div>
+							<h3 class="font-display text-2xl md:text-3xl mb-3 text-gold-gradient">AI Clones &amp;
+								Ολογράμματα</h3>
+							<p class="text-sm text-muted-foreground leading-relaxed">Ψηφιακά κλώνα και AI ολογράμματα
+								που αναπαράγουν με ακρίβεια πρόσωπα ή brand personas — ιδανικά για keynotes, brand
+								ambassadors και εκπαιδευτικές εφαρμογές.</p>
+						</div>
+					</div>
+					<!-- Card 5 -->
+					<div class="services-card group">
+						<img src="/assets/service-software-Dmk1gJZP.jpg" alt="Software με Αυτοματισμούς" loading="lazy"
+							width="1280" height="960" class="services-card-img" />
+						<div class="services-card-overlay">
+						</div>
+						<div class="services-card-content">
+							<div class="text-gold-soft font-display text-xs tracking-[0.3em] mb-2">05</div>
+							<h3 class="font-display text-2xl md:text-3xl mb-3 text-gold-gradient">Software με
+								Αυτοματισμούς</h3>
+							<p class="text-sm text-muted-foreground leading-relaxed">Ολοκληρωμένες πλατφόρμες
+								αυτοματισμού που ενσωματώνουν AI για content production, campaign management, real-time
+								analytics και API integrations.</p>
+						</div>
+					</div>
+					<!-- Card 6 -->
+					<div class="services-card group">
+						<img src="/assets/service-experience-DX-l-saP.jpg" alt="Βιωματικές Εμπειρίες AI" loading="lazy"
+							width="1280" height="960" class="services-card-img" />
+						<div class="services-card-overlay">
+						</div>
+						<div class="services-card-content">
+							<div class="text-gold-soft font-display text-xs tracking-[0.3em] mb-2">06</div>
+							<h3 class="font-display text-2xl md:text-3xl mb-3 text-gold-gradient">Βιωματικές Εμπειρίες
+								AI</h3>
+							<p class="text-sm text-muted-foreground leading-relaxed">AI-powered εμπειρίες σε δημόσιους
+								χώρους με διαδραστικές εγκαταστάσεις, multilingual video, voice workflow και QR-driven
+								storytelling.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="ai" class="relative py-32 md:py-40 overflow-hidden">
+			<div
+				class="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,oklch(0.82_0.13_85/0.15),transparent_55%)]">
+			</div>
+			<div class="relative mx-auto max-w-7xl px-6 md:px-10 grid md:grid-cols-2 gap-16 items-center">
+				<div>
+					<p class="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">(03) ΝΕΟ · AI Clones</p>
+					<h2 class="font-display text-5xl md:text-7xl leading-[0.95]">AI Clones &amp; <em
+							class="text-gold-gradient not-italic">Ολογράμματα.</em>
+					</h2>
+					<p class="mt-8 text-muted-foreground text-lg leading-relaxed max-w-xl">Η επόμενη γενιά παρουσίας.
+						AI-powered ψηφιακά κλώνα και ολογράμματα που αναπαράγουν με ακρίβεια οποιοδήποτε πρόσωπο ή brand
+						persona — με deep learning, φωνητική σύνθεση και real-time rendering.</p>
+					<div class="mt-10 space-y-5">
+						<div class="flex gap-5 border-t border-gold-soft/20 pt-5">
+							<span class="text-gold-soft font-display">0<!-- -->1</span>
+							<div>
+								<h4 class="font-display text-xl">Clone Οποιουδήποτε</h4>
+								<p class="text-sm text-muted-foreground mt-1">Πιστή αναπαραγωγή φωνής, εμφάνισης και
+									συμπεριφοράς.</p>
+							</div>
+						</div>
+						<div class="flex gap-5 border-t border-gold-soft/20 pt-5">
+							<span class="text-gold-soft font-display">0<!-- -->2</span>
+							<div>
+								<h4 class="font-display text-xl">Ολογραφική Παρουσία</h4>
+								<p class="text-sm text-muted-foreground mt-1">Προβολή σε εκδηλώσεις, εκθέσεις και
+									δημόσιους χώρους.</p>
+							</div>
+						</div>
+						<div class="flex gap-5 border-t border-gold-soft/20 pt-5">
+							<span class="text-gold-soft font-display">0<!-- -->3</span>
+							<div>
+								<h4 class="font-display text-xl">Πλήρης Προσαρμογή</h4>
+								<p class="text-sm text-muted-foreground mt-1">Γλωσσικό στυλ, τόνος και οπτική ταυτότητα
+									του brand σας.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="relative">
+					<img src="/assets/service-clones-B-9Pt5dn.jpg" alt="AI ολόγραμμα ομιλητή σε σκηνή" loading="lazy"
+						width="1280" height="960" class="w-full rounded-lg border border-gold-soft/30" />
+					<div class="absolute -inset-3 -z-10 bg-gold-gradient opacity-20 blur-3xl rounded-full">
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bg-navy-deep/60 py-24 md:py-32 border-y border-gold-soft/30">
+			<div class="mx-auto max-w-7xl px-6 md:px-10">
+				<p class="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">(04) 360° Digital Solutions</p>
+				<h2 class="font-display text-5xl md:text-7xl mb-12">Όλο το <em
+						class="text-gold-gradient not-italic">οικοσύστημα.</em>
+				</h2>
+				<div class="overflow-x-auto border border-gold-soft/30 rounded-lg">
+					<table class="w-full text-left">
+						<thead>
+							<tr class="border-b border-gold-soft/30 bg-navy/40">
+								<th class="p-5 text-xs uppercase tracking-[0.2em] text-gold-soft font-medium">Κατηγορία
+								</th>
+								<th class="p-5 text-xs uppercase tracking-[0.2em] text-gold-soft font-medium">Υπηρεσίες
+								</th>
+								<th class="p-5 text-xs uppercase tracking-[0.2em] text-gold-soft font-medium">
+									Πλεονέκτημα</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="border-b border-gold-soft/15 last:border-0 hover:bg-gold-soft/5 transition">
+								<td class="p-5 font-display text-xl">Content Creation</td>
+								<td class="p-5 text-muted-foreground">Video Production, AI Copywriting, Social Media
+								</td>
+								<td class="p-5 text-gold-soft">Engagement &amp; Reach</td>
+							</tr>
+							<tr class="border-b border-gold-soft/15 last:border-0 hover:bg-gold-soft/5 transition">
+								<td class="p-5 font-display text-xl">Web &amp; Apps</td>
+								<td class="p-5 text-muted-foreground">High-tech Digital Development</td>
+								<td class="p-5 text-gold-soft">User Experience (UX)</td>
+							</tr>
+							<tr class="border-b border-gold-soft/15 last:border-0 hover:bg-gold-soft/5 transition">
+								<td class="p-5 font-display text-xl">Localization</td>
+								<td class="p-5 text-muted-foreground">Multilingual Content, Cultural Adaptation</td>
+								<td class="p-5 text-gold-soft">Global Scalability</td>
+							</tr>
+							<tr class="border-b border-gold-soft/15 last:border-0 hover:bg-gold-soft/5 transition">
+								<td class="p-5 font-display text-xl">Events</td>
+								<td class="p-5 text-muted-foreground">Forums, Expos, Award Ceremonies, Keynote Speeches
+								</td>
+								<td class="p-5 text-gold-soft">Exclusive Networking</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+		<section id="platform" class="mx-auto max-w-7xl px-6 md:px-10 py-32 md:py-40">
+			<div class="grid lg:grid-cols-2 gap-16 items-start">
+				<div>
+					<p class="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">(05) Software &amp; Αυτοματισμοί
+					</p>
+					<h2 class="font-display text-5xl md:text-6xl leading-[1] mb-8">Πλατφόρμες που <em
+							class="text-gold-gradient not-italic">σκέφτονται.</em>
+					</h2>
+					<p class="text-muted-foreground text-lg leading-relaxed max-w-lg">Αναπτύσσουμε ολοκληρωμένες
+						πλατφόρμες αυτοματισμού που ενσωματώνουν AI για να επιταχύνουν κάθε διαδικασία — από content
+						production έως campaign management και reporting.</p>
+					<div class="mt-12 grid grid-cols-2 gap-3 max-w-md">
+						<div class="flex items-center gap-3 p-4 rounded border border-gold-soft/30">
+							<span class="text-gold-soft font-display text-lg">0<!-- -->1</span>
+							<span class="text-sm">Εισαγωγή Δεδομένων</span>
+						</div>
+						<div class="flex items-center gap-3 p-4 rounded border border-gold-soft/30">
+							<span class="text-gold-soft font-display text-lg">0<!-- -->2</span>
+							<span class="text-sm">Επεξεργασία AI</span>
+						</div>
+						<div class="flex items-center gap-3 p-4 rounded border border-gold-soft/30">
+							<span class="text-gold-soft font-display text-lg">0<!-- -->3</span>
+							<span class="text-sm">Αυτοματοποιημένη Έξοδος</span>
+						</div>
+						<div class="flex items-center gap-3 p-4 rounded border border-gold-soft/30">
+							<span class="text-gold-soft font-display text-lg">0<!-- -->4</span>
+							<span class="text-sm">Real-time Ανάλυση</span>
+						</div>
+					</div>
+				</div>
+				<div class="space-y-4">
+					<div
+						class="p-6 rounded-lg border border-gold-soft/20 bg-card/40 hover:border-gold-soft/60 transition">
+						<h3 class="font-display text-2xl text-gold-gradient mb-2">Αυτόματη Παραγωγή Περιεχομένου</h3>
+						<p class="text-muted-foreground">AI copywriting, video scripting και social media scheduling
+							χωρίς χειροκίνητη παρέμβαση.</p>
+					</div>
+					<div
+						class="p-6 rounded-lg border border-gold-soft/20 bg-card/40 hover:border-gold-soft/60 transition">
+						<h3 class="font-display text-2xl text-gold-gradient mb-2">Ροές Εργασίας (Workflows)</h3>
+						<p class="text-muted-foreground">Αυτοματοποιημένες ροές έγκρισης, διανομής και αναφοράς για
+							μέγιστη αποδοτικότητα.</p>
+					</div>
+					<div
+						class="p-6 rounded-lg border border-gold-soft/20 bg-card/40 hover:border-gold-soft/60 transition">
+						<h3 class="font-display text-2xl text-gold-gradient mb-2">Real-time Analytics</h3>
+						<p class="text-muted-foreground">Παρακολούθηση απόδοσης σε πραγματικό χρόνο με AI-driven
+							insights και προτάσεις βελτίωσης.</p>
+					</div>
+					<div
+						class="p-6 rounded-lg border border-gold-soft/20 bg-card/40 hover:border-gold-soft/60 transition">
+						<h3 class="font-display text-2xl text-gold-gradient mb-2">Ενσωμάτωση &amp; API</h3>
+						<p class="text-muted-foreground">Σύνδεση με υπάρχοντα εργαλεία CRM, CMS και marketing platforms
+							μέσω ανοιχτών APIs.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bg-navy-deep/60 py-24 md:py-32 border-y border-gold-soft/30">
+			<div class="mx-auto max-w-7xl px-6 md:px-10">
+				<p class="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">(06) Ανά ενεργοποίηση</p>
+				<h2 class="font-display text-5xl md:text-7xl mb-16">Τι <em
+						class="text-gold-gradient not-italic">περιλαμβάνεται.</em>
+				</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<div class="p-8 rounded-lg border border-gold-soft/20 bg-card/40">
+						<div class="font-display text-5xl text-gold-gradient mb-6">01</div>
+						<h3 class="font-display text-xl mb-3">Δημογραφικός Σχεδιασμός &amp; Design</h3>
+						<p class="text-sm text-muted-foreground leading-relaxed">Στοχευμένος σχεδιασμός περιεχομένου με
+							βάση λεπτομερή δημογραφικά στοιχεία.</p>
+					</div>
+					<div class="p-8 rounded-lg border border-gold-soft/20 bg-card/40">
+						<div class="font-display text-5xl text-gold-gradient mb-6">02</div>
+						<h3 class="font-display text-xl mb-3">AI Voiceover &amp; Voice Workflow</h3>
+						<p class="text-sm text-muted-foreground leading-relaxed">Voiceovers με φυσική AI φωνή και
+							αυτοματοποίηση ροών εργασίας βασισμένων στην ομιλία.</p>
+					</div>
+					<div class="p-8 rounded-lg border border-gold-soft/20 bg-card/40">
+						<div class="font-display text-5xl text-gold-gradient mb-6">03</div>
+						<h3 class="font-display text-xl mb-3">Post-Production &amp; Editing</h3>
+						<p class="text-sm text-muted-foreground leading-relaxed">Πλήρης επεξεργασία και μοντάζ για άψογο
+							τελικό αποτέλεσμα με προσοχή στη λεπτομέρεια.</p>
+					</div>
+					<div class="p-8 rounded-lg border border-gold-soft/20 bg-card/40">
+						<div class="font-display text-5xl text-gold-gradient mb-6">04</div>
+						<h3 class="font-display text-xl mb-3">QR, Microsite &amp; Διαδραστικότητα</h3>
+						<p class="text-sm text-muted-foreground leading-relaxed">Ενσωμάτωση QR codes, microsites και
+							ανάπτυξη διαδραστικών στοιχείων.</p>
+					</div>
+				</div>
+				<p class="mt-12 text-sm text-muted-foreground border-l-2 border-gold-soft/60 pl-4 max-w-3xl">⚠️ Δεν
+					περιλαμβάνονται: paid media budget, booth installation, legal review, advanced AI customization,
+					premium add-ons.</p>
+			</div>
+		</section>
+		<section id="projects-globe" class="bg-navy-deep/60 py-24 md:py-32 border-y border-gold-soft/30 scroll-section">
+			<div class="mx-auto max-w-7xl px-6 md:px-10">
+				<div class="flex items-end justify-between mb-16 gap-6 flex-wrap">
+					<div>
+						<p class="text-xs uppercase tracking-[0.3em] text-gold-soft mb-4">(07) Portfolio Globe</p>
+						<h2 class="font-display text-5xl md:text-7xl">Projects <em
+								class="text-gold-gradient not-italic">Sphere.</em>
+						</h2>
+					</div>
+					<p class="text-muted-foreground max-w-md text-base">Σύρετε τη σφαίρα για να περιστρέψετε τα project
+						μας. Κάντε κλικ σε μια εικόνα για να δείτε λεπτομέρειες.</p>
+				</div>
+				<div class="projects-globe-grid">
+					<!-- Left column: high-tech HUD details panel -->
+					<div class="projects-globe-left">
+						<div class="p-10 rounded-lg border border-gold-soft/20 bg-card/40 backdrop-blur relative overflow-hidden"
+							id="project-details-panel">
+							<div class="text-gold-soft font-display text-sm tracking-[0.3em] mb-4"
+								id="project-hud-year">PROJECT CLIENT //</div>
+							<h3 class="font-display text-4xl md:text-5xl mb-4 text-gold-gradient"
+								id="project-hud-title">Select a Project</h3>
+							<div class="mb-4 text-sm uppercase tracking-[0.25em] text-gold-soft border-y border-gold-soft/10 py-2"
+								id="project-hud-category">CATEGORY</div>
+							<p class="text-muted-foreground leading-relaxed text-base md:text-lg min-h-[140px]"
+								id="project-hud-desc">
+								Περάστε το ποντίκι ή κάντε κλικ σε οποιοδήποτε πλακίδιο της περιστρεφόμενης σφαίρας στα
+								δεξιά για να δείτε τα στοιχεία του έργου.
+							</p>
+							<div class="mt-6 border-t border-gold-soft/15 pt-6">
+								<button id="project-hud-expand"
+									class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] px-5 py-3 rounded-full border border-gold-soft text-gold-soft hover:bg-gold-gradient hover:text-primary-foreground hover:border-transparent transition bg-transparent cursor-pointer">Μάθετε
+									περισσότερα →</button>
+							</div>
+							<div class="absolute -bottom-10 -right-10 w-24 h-24 bg-gold-soft/5 rounded-full blur-xl">
+							</div>
+						</div>
+					</div>
+					<!-- Right column: the 3D sphere viewport -->
+					<div class="projects-globe-right">
+						<div class="sphere-viewport" id="sphere-viewport">
+							<div class="sphere-wrapper" id="sphere-wrapper">
+								<!-- Dynamically populated via JavaScript -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="contact" class="relative bg-navy-deep border-t border-gold-soft/40 py-24 md:py-32 overflow-hidden">
+			<div
+				class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,oklch(0.82_0.13_85/0.18),transparent_60%)]">
+			</div>
+			<div class="relative mx-auto max-w-5xl px-6 md:px-10 text-center">
+				<img src="/assets/victorious-logo.png" alt=""
+					class="h-20 w-20 object-contain mx-auto mb-8 animate-float" />
+				<p class="text-xs uppercase tracking-[0.4em] text-gold-soft mb-6">Let&#x27;s build the future</p>
+				<h2 class="font-display text-6xl md:text-8xl leading-[0.9]">Έχετε ένα <em
+						class="text-gold-gradient not-italic">brief;</em>
+				</h2>
+				<p class="mt-8 text-muted-foreground text-lg max-w-2xl mx-auto">Πείτε μας για την ιστορία σας. Θα
+					γυρίσουμε με την στρατηγική που θα την κάνει αδύνατο να αγνοηθεί.</p>
+				<a href="mailto:hello@victoriousnetwork.com"
+					class="mt-12 inline-block bg-gold-gradient text-primary-foreground px-10 py-5 rounded-full text-sm uppercase tracking-[0.25em] font-medium hover:opacity-90 transition">hello@victoriousnetwork.com</a>
+				<div
+					class="mt-16 grid sm:grid-cols-3 gap-6 text-sm text-muted-foreground border-t border-gold-soft/20 pt-10">
+					<div>
+						<p class="text-gold-soft uppercase tracking-[0.2em] text-xs mb-2">HQ</p>
+						<p>Αθήνα · Λευκωσία</p>
+					</div>
+					<div>
+						<p class="text-gold-soft uppercase tracking-[0.2em] text-xs mb-2">Press</p>
+						<p>press@victoriousnetwork.com</p>
+					</div>
+					<div>
+						<p class="text-gold-soft uppercase tracking-[0.2em] text-xs mb-2">Follow</p>
+						<p>@victoriousnetwork</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="bg-background border-t border-gold-soft/30">
+			<div
+				class="mx-auto max-w-7xl px-6 md:px-10 py-10 flex flex-wrap items-center justify-between gap-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+				<div class="flex items-center gap-3">
+					<img src="/assets/victorious-logo.png" alt="" class="h-8 w-8 object-contain" />
+					<span>© <!-- -->2026<!-- --> Victorious Network · Elevate · Innovate · Triumph</span>
+				</div>
+				<span class="text-gold-soft">AI-driven storytelling.</span>
+			</div>
+		</footer>
+	</div>
+	<!--/$-->
+	<aside id="lovable-badge" role="complementary" dir="ltr" lang="en" aria-label="Edit with Lovable">
+		<a id="lovable-badge-cta" target="_blank"
+			href="https://lovable.dev/projects/52746724-b16a-4c26-a6ac-c1eb203ece5f?utm_source=lovable-badge"
+			rel="noopener nofollow" aria-label="Edit with Lovable">
+			<span id="lovable-badge-text">Edit with</span>
+			<svg xmlns="http://www.w3.org/2000/svg" width="52" height="16" fill="none" viewBox="0 0 52 16">
+				<path fill="#FCFBF8" fill-rule="evenodd"
+					d="M20.318 5.25c.643 0 1.206.14 1.69.418a2.81 2.81 0 0 1 1.118 1.191c.266.513.4 1.115.4 1.807s-.134 1.296-.4 1.812a2.81 2.81 0 0 1-1.118 1.193c-.484.278-1.047.418-1.69.418s-1.208-.14-1.695-.418a2.85 2.85 0 0 1-1.125-1.193c-.262-.516-.393-1.12-.393-1.812s.131-1.294.393-1.807a2.848 2.848 0 0 1 1.125-1.191c.487-.279 1.052-.418 1.695-.418Zm0 1.425c-.27 0-.504.076-.7.228-.193.147-.34.37-.443.67-.102.295-.153.66-.153 1.093 0 .435.05.801.153 1.1.102.3.25.524.443.676.196.147.43.22.7.22.27 0 .502-.073.694-.22.193-.152.341-.375.443-.67.103-.299.153-.667.153-1.106 0-.65-.112-1.145-.337-1.481a1.08 1.08 0 0 0-.953-.51ZM32.7 5.25c.61 0 1.127.1 1.549.3.422.197.74.48.953.849.217.368.325.809.325 1.32v2.704c0 .29.02.562.062.812.044.245.108.4.19.466V12h-1.935a5.895 5.895 0 0 1-.105-.684 7.745 7.745 0 0 1-.02-.228 2.293 2.293 0 0 1-.151.203c-.205.242-.47.437-.793.584-.32.143-.685.215-1.094.215-.406 0-.77-.08-1.094-.24a1.845 1.845 0 0 1-.756-.682 1.984 1.984 0 0 1-.27-1.045c0-.606.178-1.069.535-1.388.356-.324.87-.534 1.542-.633l1.125-.16c.225-.032.403-.074.534-.123a.622.622 0 0 0 .288-.196.549.549 0 0 0 .093-.327.65.65 0 0 0-.11-.367.702.702 0 0 0-.32-.27c-.14-.07-.31-.105-.51-.105-.32 0-.576.083-.768.251-.193.164-.298.39-.314.676h-1.923c.016-.434.147-.82.393-1.155.25-.34.596-.604 1.039-.792.442-.189.954-.283 1.535-.283Zm.99 3.498a.98.98 0 0 1-.215.14 2.49 2.49 0 0 1-.584.178l-.473.092c-.315.061-.553.156-.713.283-.155.127-.233.305-.233.534 0 .23.084.412.252.547.168.135.383.203.645.203s.494-.058.694-.173c.201-.118.355-.282.461-.49.11-.21.166-.448.166-.714v-.6Zm4.526-2.375c.065-.125.138-.243.221-.349.197-.25.437-.44.719-.571.282-.135.6-.203.952-.203.528 0 .988.138 1.377.412.389.275.688.67.896 1.186.21.512.314 1.12.314 1.824 0 .7-.107 1.309-.32 1.825-.213.512-.518.906-.915 1.18-.393.275-.854.412-1.383.412-.352 0-.667-.062-.946-.184a1.832 1.832 0 0 1-.7-.554 2.2 2.2 0 0 1-.234-.383V12h-1.843V3h1.862v3.373Zm1.284.296c-.274 0-.51.085-.707.253-.192.163-.338.397-.436.7a3.376 3.376 0 0 0-.148 1.05c0 .406.05.759.148 1.058.098.299.243.53.436.694.197.164.433.246.707.246.279 0 .512-.082.7-.246.193-.164.336-.395.43-.694.099-.3.148-.652.148-1.058 0-.405-.05-.757-.147-1.056-.095-.299-.238-.53-.43-.694a1.015 1.015 0 0 0-.7-.253Zm9.416-1.419c.602 0 1.136.131 1.604.393.466.262.829.643 1.086 1.143.263.5.394 1.097.394 1.794 0 .25-.002.449-.006.596H47.51c.018.288.071.538.164.75a1.3 1.3 0 0 0 .491.596c.214.13.465.196.757.196.319 0 .583-.082.792-.246.209-.167.34-.403.393-.706h1.862a2.48 2.48 0 0 1-.485 1.235 2.54 2.54 0 0 1-1.051.805c-.439.188-.949.283-1.53.283-.655 0-1.225-.125-1.708-.375a2.672 2.672 0 0 1-1.13-1.143c-.267-.508-.4-1.137-.4-1.887 0-.712.14-1.327.418-1.843a2.86 2.86 0 0 1 1.155-1.186c.491-.27 1.051-.405 1.678-.405Zm-.044 1.345c-.274 0-.516.068-.725.203a1.29 1.29 0 0 0-.479.59 2.045 2.045 0 0 0-.132.498h2.562a1.873 1.873 0 0 0-.138-.602 1.061 1.061 0 0 0-.418-.516 1.243 1.243 0 0 0-.67-.173Z"
+					clip-rule="evenodd" />
+				<path fill="#FCFBF8"
+					d="m26.605 9.995 1.342-4.566h1.924L27.628 12h-2.07l-2.33-6.57h1.98l1.397 4.565Zm-13.013.143h2.256c1.632 0 1.421 1.837 1.418 1.861h-5.603V3h1.93v7.138Zm31.516 1.861h-1.862V3h1.862v8.999Z" />
+				<path fill="url(#a)" fill-rule="evenodd"
+					d="M2.7 3c1.492 0 2.7 1.192 2.7 2.663v1.012h.9c1.49 0 2.7 1.192 2.7 2.662S7.791 12 6.3 12H0V5.663C0 4.193 1.209 3 2.7 3Z"
+					clip-rule="evenodd" />
+				<defs>
+					<radialGradient id="a" cx="0" cy="0" r="1"
+						gradientTransform="matrix(-1.54236 7.07838 -10.231 -2.15602 4.627 5.022)"
+						gradientUnits="userSpaceOnUse">
+						<stop offset=".106" stop-color="#FE7B02" />
+						<stop offset=".394" stop-color="#FE3F21" />
+						<stop offset=".608" stop-color="#F858BC" />
+						<stop offset=".929" stop-color="#575ECF" />
+					</radialGradient>
+				</defs>
+			</svg>
+		</a>
+		<span id="lovable-badge-divider" aria-hidden="true">
+		</span>
+		<button id="lovable-badge-close" aria-label="Dismiss" title="Dismiss" type="button">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"
+				aria-hidden="true">
+				<path
+					d="M10.646 4.646a.5.5 0 1 1 .707.708L8.707 8l2.646 2.646a.5.5 0 1 1-.707.707L8 8.707l-2.646 2.646a.5.5 0 1 1-.708-.707L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708L8 7.293l2.646-2.647Z" />
+			</svg>
+		</button>
+	</aside>
+	<script>
+		// Don't show the lovable-badge if the page is in an iframe or if it's being rendered by puppeteer (screenshot service)
+		if (window.self !== window.top || navigator.userAgent.includes('puppeteer')) {
+			// the page is in an iframe
+			var badge = document.getElementById('lovable-badge');
+			if (badge) {
+				badge.style.display = 'none';
+			}
+		}
+
+		// Add click event listener to close button with animation
+		var closeButton = document.getElementById('lovable-badge-close');
+		if (closeButton) {
+			closeButton.addEventListener('click', function (event) {
+				event.preventDefault();
+				event.stopPropagation();
+				var badge = document.getElementById('lovable-badge');
+				if (badge) {
+					badge.classList.add('closing');
+					setTimeout(function () {
+						if (badge) {
+							badge.style.display = 'none';
+						}
+					}, 240);
+				}
+			});
+		}
+	</script>
+	<!-- Project Gallery Modal Overlay -->
+	<div class="project-modal-overlay" id="project-modal">
+		<div class="project-modal-container">
+			<button class="project-modal-close" id="project-modal-close" aria-label="Κλείσιμο">&times; Close</button>
+			<div class="project-modal-content">
+				<!-- Left Pane: Details -->
+				<div class="project-modal-details">
+					<div class="text-gold-soft font-display text-sm tracking-[0.3em] mb-4" id="modal-project-client">
+						PROJECT CLIENT //</div>
+					<h2 class="font-display text-4xl md:text-5xl text-gold-gradient mb-6" id="modal-project-title">
+						Project Title</h2>
+					<div class="text-sm uppercase tracking-[0.25em] text-gold-soft border-y border-gold-soft/10 py-2 mb-6"
+						id="modal-project-category">CATEGORY</div>
+					<p class="text-muted-foreground leading-relaxed text-base md:text-lg" id="modal-project-desc">
+						Project Description.
+					</p>
+				</div>
+				<!-- Right Pane: Gallery -->
+				<div class="project-modal-gallery-wrapper">
+					<div class="project-modal-gallery-main">
+						<img src="" alt="" id="modal-gallery-main-img" />
+					</div>
+					<div class="project-modal-gallery-thumbs" id="modal-gallery-thumbs">
+						<!-- Thumbnail images dynamically populated -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Application Script -->
+	<script type="module" src="/src/main.js">
+	</script>
+</body>
+
+</html>
