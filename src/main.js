@@ -387,6 +387,19 @@ const projectsData = [
   }
 ];
 
+// Prepend BASE_URL to absolute asset paths for GitHub Pages compatibility
+const baseUrl = import.meta.env.BASE_URL || '/';
+projectsData.forEach(project => {
+  if (project.img && project.img.startsWith('/')) {
+    project.img = baseUrl + project.img.slice(1);
+  }
+  if (project.gallery) {
+    project.gallery = project.gallery.map(img => {
+      return (img && img.startsWith('/')) ? baseUrl + img.slice(1) : img;
+    });
+  }
+});
+
 function initProjectsSphere() {
   const wrapper = document.getElementById('sphere-wrapper');
   const viewport = document.getElementById('sphere-viewport');
