@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 
 <head>
 	<meta charSet="utf-8" />
@@ -8,6 +8,14 @@
 		href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
 		data-precedence="default" />
 	<title>Victorious Network — AI-Driven Agency for Technology Storytelling</title>
+	<link rel="canonical" href="https://nikoskaravn-maker.github.io/victorious-network/" />
+	
+	<!-- GEO Meta Tags (Athens, Greece) -->
+	<meta name="geo.region" content="GR-I" />
+	<meta name="geo.placename" content="Athens" />
+	<meta name="geo.position" content="37.9947;23.6961" />
+	<meta name="ICBM" content="37.9947, 23.6961" />
+	
 	<meta property="og:type" content="website" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Victorious Network — Experiential &amp; Holographic Productions" />
@@ -22,6 +30,48 @@
 	<meta property="og:title" content="Victorious Network" />
 	<meta property="og:description"
 		content="Elevate. Innovate. Triumph. AI-driven στρατηγική, PR, ολογράμματα και βιωματικές εμπειρίες για τεχνολογικές εταιρείες." />
+	
+	<!-- JSON-LD LocalBusiness Schema Markup -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "LocalBusiness",
+		"name": "Victorious Network",
+		"image": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f11da558-31a2-495c-afc6-5347f67d2843/id-preview-d6bc0bde--52746724-b16a-4c26-a6ac-c1eb203ece5f.lovable.app-1780994341526.png",
+		"@id": "https://nikoskaravn-maker.github.io/victorious-network/",
+		"url": "https://nikoskaravn-maker.github.io/victorious-network/",
+		"telephone": "+302111820195",
+		"email": "info@victoriousnetwork.com",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Παρ. Λεωφόρου Κηφισού 54",
+			"addressLocality": "Αθήνα",
+			"postalCode": "104 42",
+			"addressCountry": "GR"
+		},
+		"geo": {
+			"@type": "GeoCoordinates",
+			"latitude": 37.9947,
+			"longitude": 23.6961
+		},
+		"openingHoursSpecification": {
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": [
+				"Monday",
+				"Tuesday",
+				"Wednesday",
+				"Thursday",
+				"Friday"
+			],
+			"opens": "09:00",
+			"closes": "18:00"
+		},
+		"sameAs": [
+			"https://www.instagram.com/victoriousnetwork"
+		]
+	}
+	</script>
+
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<style>
@@ -32,11 +82,8 @@
 			font-style: normal;
 			font-display: swap;
 		}
-
-
 	</style>
-  <script type="module" crossorigin src="/victorious-network/assets/index-DbFBGtVk.js"></script>
-  <link rel="stylesheet" crossorigin href="/victorious-network/assets/index-C9WueA33.css">
+  <script type="module" crossorigin src="/victorious-network/assets/index-Dezn_h7o.js"></script>
 </head>
 
 <body>
@@ -46,7 +93,8 @@
 			<div class="mx-auto max-w-7xl px-6 md:px-10 h-20 flex items-center justify-between">
 				<a href="#top" class="flex items-center gap-3">
 					<img src="/victorious-network/assets/victorious-logo.png" alt="Victorious Network" class="h-12 w-12 object-contain" />
-					<span class="hidden sm:block font-display text-lg tracking-wide text-gold-gradient">Victorious
+					<span
+						class="hidden xs:block sm:block font-display text-base sm:text-lg tracking-wide text-gold-gradient">Victorious
 						Network</span>
 				</a>
 				<nav
@@ -58,8 +106,33 @@
 					<a href="#projects-globe" class="hover:text-gold-soft transition">Projects</a>
 					<a href="#contact" class="hover:text-gold-soft transition">Επικοινωνία</a>
 				</nav>
+				<div class="flex items-center gap-4">
+					<a href="#contact"
+						class="hidden md:inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] px-5 py-3 rounded-full border border-gold-soft text-gold-soft hover:bg-gold-gradient hover:text-primary-foreground hover:border-transparent transition">Ξεκινήστε
+						→</a>
+					<!-- Hamburger Menu Button -->
+					<button id="mobile-menu-btn"
+						class="md:hidden flex flex-col justify-between w-6 h-4 text-gold-soft focus:outline-none z-50 cursor-pointer"
+						aria-label="Μενού">
+						<span
+							class="w-full h-[2px] bg-gold-soft rounded transition-all duration-300 origin-center"></span>
+						<span class="w-full h-[2px] bg-gold-soft rounded transition-all duration-300"></span>
+						<span
+							class="w-full h-[2px] bg-gold-soft rounded transition-all duration-300 origin-center"></span>
+					</button>
+				</div>
+			</div>
+			<!-- Mobile Menu Dropdown -->
+			<div id="mobile-menu"
+				class="hidden fixed inset-0 top-20 bg-[#010717]/98 backdrop-blur-xl z-40 flex-col items-center justify-center gap-8 text-lg uppercase tracking-[0.2em] text-muted-foreground transition-all duration-300 border-b border-gold-soft/20 h-[calc(100vh-5rem)]">
+				<a href="#about" class="hover:text-gold-soft transition py-2 mobile-link">Ποιοι Είμαστε</a>
+				<a href="#services" class="hover:text-gold-soft transition py-2 mobile-link">Υπηρεσίες</a>
+				<a href="#ai" class="hover:text-gold-soft transition py-2 mobile-link">AI Clones</a>
+				<a href="#platform" class="hover:text-gold-soft transition py-2 mobile-link">Platform</a>
+				<a href="#projects-globe" class="hover:text-gold-soft transition py-2 mobile-link">Projects</a>
+				<a href="#contact" class="hover:text-gold-soft transition py-2 mobile-link">Επικοινωνία</a>
 				<a href="#contact"
-					class="hidden md:inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] px-5 py-3 rounded-full border border-gold-soft text-gold-soft hover:bg-gold-gradient hover:text-primary-foreground hover:border-transparent transition">Ξεκινήστε
+					class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] px-6 py-4 rounded-full border border-gold-soft text-gold-soft hover:bg-gold-gradient hover:text-primary-foreground hover:border-transparent transition mt-4 mobile-link">Ξεκινήστε
 					→</a>
 			</div>
 		</header>
@@ -545,7 +618,7 @@
 				class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,oklch(0.82_0.13_85/0.18),transparent_60%)]">
 			</div>
 			<div class="relative mx-auto max-w-5xl px-6 md:px-10 text-center">
-				<img src="/victorious-network/assets/victorious-logo.png" alt=""
+				<img src="/victorious-network/assets/victorious-logo.png" alt="Victorious Network Logo"
 					class="h-20 w-20 object-contain mx-auto mb-8 animate-float" />
 				<p class="text-xs uppercase tracking-[0.4em] text-gold-soft mb-6">Let&#x27;s build the future</p>
 				<h2 class="font-display text-6xl md:text-8xl leading-[0.9]">Έχετε ένα <em
@@ -553,17 +626,20 @@
 				</h2>
 				<p class="mt-8 text-muted-foreground text-lg max-w-2xl mx-auto">Πείτε μας για την ιστορία σας. Θα
 					γυρίσουμε με την στρατηγική που θα την κάνει αδύνατο να αγνοηθεί.</p>
-				<a href="mailto:hello@victoriousnetwork.com"
-					class="mt-12 inline-block bg-gold-gradient text-primary-foreground px-10 py-5 rounded-full text-sm uppercase tracking-[0.25em] font-medium hover:opacity-90 transition">hello@victoriousnetwork.com</a>
+				<a href="mailto:info@victoriousnetwork.com"
+					class="mt-12 inline-block bg-gold-gradient text-primary-foreground px-6 py-4 sm:px-10 sm:py-5 rounded-full text-xs sm:text-sm uppercase tracking-[0.25em] font-medium hover:opacity-90 transition max-w-full break-all">info@victoriousnetwork.com</a>
 				<div
 					class="mt-16 grid sm:grid-cols-3 gap-6 text-sm text-muted-foreground border-t border-gold-soft/20 pt-10">
 					<div>
-						<p class="text-gold-soft uppercase tracking-[0.2em] text-xs mb-2">HQ</p>
-						<p>Αθήνα · Λευκωσία</p>
+						<p class="text-gold-soft uppercase tracking-[0.2em] text-xs mb-2">HQ / Διεύθυνση</p>
+						<p>Παρ. Λεωφόρου Κηφισού 54,<br />Αθήνα 104 42</p>
 					</div>
 					<div>
-						<p class="text-gold-soft uppercase tracking-[0.2em] text-xs mb-2">Press</p>
-						<p>press@victoriousnetwork.com</p>
+						<p class="text-gold-soft uppercase tracking-[0.2em] text-xs mb-2">Επικοινωνία</p>
+						<p class="mb-1"><a href="tel:+302111820195" class="hover:text-gold-soft transition">21 1182
+								0195</a></p>
+						<p><a href="mailto:info@victoriousnetwork.com"
+								class="hover:text-gold-soft transition">info@victoriousnetwork.com</a></p>
 					</div>
 					<div>
 						<p class="text-gold-soft uppercase tracking-[0.2em] text-xs mb-2">Follow</p>
@@ -576,7 +652,7 @@
 			<div
 				class="mx-auto max-w-7xl px-6 md:px-10 py-10 flex flex-wrap items-center justify-between gap-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
 				<div class="flex items-center gap-3">
-					<img src="/victorious-network/assets/victorious-logo.png" alt="" class="h-8 w-8 object-contain" />
+					<img src="/victorious-network/assets/victorious-logo.png" alt="Victorious Network Logo" class="h-8 w-8 object-contain" />
 					<span>© <!-- -->2026<!-- --> Victorious Network · Elevate · Innovate · Triumph</span>
 				</div>
 				<span class="text-gold-soft">AI-driven storytelling.</span>
@@ -614,6 +690,45 @@
 		</div>
 	</div>
 	<!-- Application Script -->
+	<script>
+		// Mobile Menu Functionality
+		const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+		const mobileMenu = document.getElementById('mobile-menu');
+		const mobileLinks = document.querySelectorAll('.mobile-link');
+
+		if (mobileMenuBtn && mobileMenu) {
+			mobileMenuBtn.addEventListener('click', () => {
+				const isHidden = mobileMenu.classList.contains('hidden');
+				mobileMenu.classList.toggle('hidden');
+				mobileMenu.classList.toggle('flex');
+
+				const lines = mobileMenuBtn.querySelectorAll('span');
+				if (isHidden) {
+					// Open state
+					lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+					lines[1].style.opacity = '0';
+					lines[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+				} else {
+					// Closed state
+					lines[0].style.transform = 'none';
+					lines[1].style.opacity = '1';
+					lines[2].style.transform = 'none';
+				}
+			});
+
+			mobileLinks.forEach(link => {
+				link.addEventListener('click', () => {
+					mobileMenu.classList.add('hidden');
+					mobileMenu.classList.remove('flex');
+
+					const lines = mobileMenuBtn.querySelectorAll('span');
+					lines[0].style.transform = 'none';
+					lines[1].style.opacity = '1';
+					lines[2].style.transform = 'none';
+				});
+			});
+		}
+	</script>
 </body>
 
 </html>

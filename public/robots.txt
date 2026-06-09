@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nikoskaravn-maker.github.io/victorious-network/sitemap.xml
