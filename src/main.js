@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   revealGlassVault();
   initProjectsSphere();
+  initHologramChamber();
 });
 
 // ==========================================================================
@@ -177,6 +178,43 @@ function initGlassShatterShowcase() {
 
     triggerHeroReveal();
   });
+}
+
+// ==========================================================================
+// 4b. Interactive Hologram 3D Parallax Tilt
+// ==========================================================================
+function initHologramChamber() {
+  const container = document.getElementById('hologram-vault-container');
+  if (!container) return;
+
+  const handleMouseMove = (e) => {
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    
+    // Tilt calculation: rotate up to 15 degrees
+    const rotateY = (x / (rect.width / 2)) * 15; 
+    const rotateX = -(y / (rect.height / 2)) * 15;
+    
+    gsap.to(container, {
+      rotationY: rotateY,
+      rotationX: rotateX,
+      duration: 0.5,
+      ease: 'power2.out'
+    });
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(container, {
+      rotationY: 0,
+      rotationX: 0,
+      duration: 0.8,
+      ease: 'power2.out'
+    });
+  };
+
+  container.addEventListener('mousemove', handleMouseMove);
+  container.addEventListener('mouseleave', handleMouseLeave);
 }
 
 // ==========================================================================
