@@ -1,7 +1,5 @@
 import './style.css';
 import gsap from 'gsap';
-import * as THREE from 'three';
-// GLTFLoader removed since we use procedural modeling now
 
 // ==========================================================================
 // VICTORIOUS NETWORK - INTERACTIVE UX CONTROLLER (3D LOGO & INTRO REVEAL)
@@ -31,6 +29,13 @@ function revealGlassVault() {
 // 2. Reveal Hero Content Grid After Shatter
 // ==========================================================================
 function triggerHeroReveal() {
+  // Fade in the planet orbit views and the glassmorphic readability overlay
+  gsap.to('.orbit-desktop-view, .orbit-mobile-view, .planet-overlay', {
+    opacity: 1,
+    duration: 1.5,
+    ease: 'power2.out'
+  });
+
   gsap.to('.hero-content-grid', {
     opacity: 1,
     pointerEvents: 'auto',
@@ -52,12 +57,10 @@ function initHeaderScroll() {
   if (!header) return;
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.remove('bg-transparent');
-      header.classList.add('bg-[#010717]/90', 'backdrop-blur-md');
+    if (window.scrollY > 30) {
+      header.classList.add('scrolled');
     } else {
-      header.classList.add('bg-transparent');
-      header.classList.remove('bg-[#010717]/90', 'backdrop-blur-md');
+      header.classList.remove('scrolled');
     }
   });
 }
@@ -178,6 +181,26 @@ function initGlassShatterShowcase() {
       }
     });
 
+    // Unlock body scroll and reveal header & page content
+    document.body.classList.remove('is-locked');
+    const pageContent = document.getElementById('page-content');
+    const header = document.querySelector('header');
+    
+    if (pageContent) {
+      pageContent.classList.remove('hidden');
+      gsap.fromTo(pageContent, 
+        { opacity: 0 }, 
+        { opacity: 1, duration: 1.2, ease: 'power2.out' }
+      );
+    }
+    
+    if (header) {
+      gsap.fromTo(header, 
+        { opacity: 0 }, 
+        { opacity: 1, duration: 1.2, ease: 'power2.out' }
+      );
+    }
+
     triggerHeroReveal();
   });
 }
@@ -188,232 +211,14 @@ function initGlassShatterShowcase() {
 function initHologramChamber() {
   const container = document.getElementById('hologram-vault-container');
   const avatar = document.getElementById('hologram-interactive-avatar');
-  const canvasContainer = document.getElementById('hologram-3d-webgl-container');
   
-  if (!container || !avatar || !canvasContainer) return;
-
-  // 1. Setup Three.js Scene, Camera, and Renderer
-  const width = canvasContainer.clientWidth || 380;
-  const height = canvasContainer.clientHeight || 450;
-
-  const scene = new THREE.Scene();
-
-  const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-  camera.position.set(0, 0, 8); // Perfect framing distance
-
-  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-  renderer.setSize(width, height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.shadowMap.enabled = true;
-  canvasContainer.appendChild(renderer.domElement);
-
-  // Hide the default canvas element initially
-  renderer.domElement.style.opacity = 0;
-
-  // 2. Setup Lighting (Premium studio lighting)
-  const ambientLight = new THREE.AmbientLight(0xffffff, 1.2); // Base ambient illumination
-  scene.add(ambientLight);
-
-  const dirLight = new THREE.DirectionalLight(0xffffff, 4.0); // Bright directional lighting for metal highlights
-  dirLight.position.set(5, 5, 5);
-  scene.add(dirLight);
-
-  const backLight = new THREE.DirectionalLight(0xeebc58, 2.5); // Golden backlight to match the brand color
-  backLight.position.set(-5, 3, -5);
-  scene.add(backLight);
-
-  // 3. Procedural Modeling: Build Sophia Head Assembly
-  const chromeMaterial = new THREE.MeshStandardMaterial({
-    color: 0xdddddd,
-    metalness: 0.95,
-    roughness: 0.1
-  });
-
-  const goldMaterial = new THREE.MeshStandardMaterial({
-    color: 0xd4af37,
-    metalness: 0.9,
-    roughness: 0.2
-  });
-
-  const darkTitanium = new THREE.MeshStandardMaterial({
-    color: 0x161c24,
-    metalness: 0.8,
-    roughness: 0.4
-  });
-
-  const cyanGlowMaterial = new THREE.MeshStandardMaterial({
-    color: 0x00f0ff,
-    emissive: 0x00a8ff,
-    emissiveIntensity: 2.5,
-    roughness: 0.3
-  });
-
-  const robotHeadGroup = new THREE.Group();
-  scene.add(robotHeadGroup);
-
-  // --- SKULL BASE ---
-  const skullGeom = new THREE.SphereGeometry(1, 32, 32);
-  const skull = new THREE.Mesh(skullGeom, darkTitanium);
-  skull.scale.set(1, 1.2, 0.9);
-  robotHeadGroup.add(skull);
-
-  // --- FACE MASK PLATE ---
-  const facePlateGeom = new THREE.SphereGeometry(0.95, 32, 16, 0, Math.PI, 0, Math.PI);
-  const facePlate = new THREE.Mesh(facePlateGeom, chromeMaterial);
-  facePlate.position.set(0, 0.1, 0.1);
-  facePlate.scale.set(0.95, 1.1, 0.95);
-  facePlate.rotation.y = Math.PI / 2;
-  robotHeadGroup.add(facePlate);
-
-  // --- ROBOTIC FOREHEAD COVER ---
-  const foreheadGeom = new THREE.BoxGeometry(1.2, 0.4, 0.5);
-  const forehead = new THREE.Mesh(foreheadGeom, goldMaterial);
-  forehead.position.set(0, 0.7, 0.45);
-  forehead.rotation.x = -0.3;
-  robotHeadGroup.add(forehead);
-
-  // --- JAW / CHIN PLATE ---
-  const chinGeom = new THREE.BoxGeometry(0.5, 0.4, 0.4);
-  const chin = new THREE.Mesh(chinGeom, goldMaterial);
-  chin.position.set(0, -0.85, 0.45);
-  chin.rotation.x = 0.2;
-  robotHeadGroup.add(chin);
-
-  // --- NOSE ASSEMBLY ---
-  const noseGeom = new THREE.ConeGeometry(0.12, 0.5, 4);
-  const nose = new THREE.Mesh(noseGeom, chromeMaterial);
-  nose.position.set(0, -0.1, 0.95);
-  nose.rotation.x = -0.1;
-  robotHeadGroup.add(nose);
-
-  // --- EYE SOCKETS & GLOWING EYES ---
-  const eyeSocketGeom = new THREE.CylinderGeometry(0.22, 0.22, 0.05, 32);
-  const eyeBallGeom = new THREE.SphereGeometry(0.12, 16, 16);
-  
-  // Left Eye
-  const leftSocket = new THREE.Mesh(eyeSocketGeom, darkTitanium);
-  leftSocket.position.set(-0.35, 0.25, 0.8);
-  leftSocket.rotation.x = Math.PI / 2;
-  leftSocket.rotation.z = -0.15;
-  robotHeadGroup.add(leftSocket);
-
-  const leftEyeBall = new THREE.Mesh(eyeBallGeom, cyanGlowMaterial);
-  leftEyeBall.position.set(-0.35, 0.25, 0.83);
-  robotHeadGroup.add(leftEyeBall);
-
-  // Right Eye
-  const rightSocket = new THREE.Mesh(eyeSocketGeom, darkTitanium);
-  rightSocket.position.set(0.35, 0.25, 0.8);
-  rightSocket.rotation.x = Math.PI / 2;
-  rightSocket.rotation.z = 0.15;
-  robotHeadGroup.add(rightSocket);
-
-  const rightEyeBall = new THREE.Mesh(eyeBallGeom, cyanGlowMaterial);
-  rightEyeBall.position.set(0.35, 0.25, 0.83);
-  robotHeadGroup.add(rightEyeBall);
-
-  // --- CHEEKS & MOUTH LINE ---
-  const cheekGeom = new THREE.BoxGeometry(0.35, 0.4, 0.2);
-  const leftCheek = new THREE.Mesh(cheekGeom, chromeMaterial);
-  leftCheek.position.set(-0.45, -0.3, 0.7);
-  leftCheek.rotation.y = 0.25;
-  robotHeadGroup.add(leftCheek);
-
-  const rightCheek = leftCheek.clone();
-  rightCheek.position.x = 0.45;
-  rightCheek.rotation.y = -0.25;
-  robotHeadGroup.add(rightCheek);
-
-  const mouthGeom = new THREE.BoxGeometry(0.5, 0.05, 0.15);
-  const mouth = new THREE.Mesh(mouthGeom, darkTitanium);
-  mouth.position.set(0, -0.5, 0.75);
-  robotHeadGroup.add(mouth);
-
-  // --- CYBERNETIC BACK OF HEAD ---
-  const skullRing1Geom = new THREE.TorusGeometry(0.9, 0.04, 8, 48);
-  const skullRing1 = new THREE.Mesh(skullRing1Geom, goldMaterial);
-  skullRing1.position.set(0, 0, -0.25);
-  skullRing1.rotation.y = Math.PI / 2;
-  robotHeadGroup.add(skullRing1);
-
-  const skullRing2 = skullRing1.clone();
-  skullRing2.position.set(0, 0.25, -0.35);
-  skullRing2.scale.set(0.85, 0.85, 0.85);
-  robotHeadGroup.add(skullRing2);
-
-  // Mechanical ear ports / pivot joints
-  const earPortGeom = new THREE.CylinderGeometry(0.28, 0.28, 0.15, 32);
-  const leftEar = new THREE.Mesh(earPortGeom, chromeMaterial);
-  leftEar.position.set(-0.95, 0.1, -0.1);
-  leftEar.rotation.z = Math.PI / 2;
-  robotHeadGroup.add(leftEar);
-
-  const rightEar = leftEar.clone();
-  rightEar.position.x = 0.95;
-  robotHeadGroup.add(rightEar);
-
-  // Processor / Brain
-  const processorGeom = new THREE.BoxGeometry(0.4, 0.4, 0.1);
-  const processor = new THREE.Mesh(processorGeom, goldMaterial);
-  processor.position.set(0, 0.3, -0.85);
-  processor.rotation.y = Math.PI;
-  robotHeadGroup.add(processor);
-
-  const brainNodeGeom = new THREE.SphereGeometry(0.12, 16, 16);
-  const brainNode = new THREE.Mesh(brainNodeGeom, cyanGlowMaterial);
-  brainNode.position.set(0, 0.3, -0.92);
-  robotHeadGroup.add(brainNode);
-
-  // --- NECK & MECHANICAL STRUTS ---
-  const neckGeom = new THREE.CylinderGeometry(0.28, 0.32, 1.2, 32);
-  const neck = new THREE.Mesh(neckGeom, chromeMaterial);
-  neck.position.set(0, -1.5, 0.0);
-  robotHeadGroup.add(neck);
-
-  const pistonGeom = new THREE.CylinderGeometry(0.08, 0.08, 0.9, 16);
-  const leftPiston = new THREE.Mesh(pistonGeom, darkTitanium);
-  leftPiston.position.set(-0.35, -1.5, -0.1);
-  leftPiston.rotation.z = 0.15;
-  robotHeadGroup.add(leftPiston);
-
-  const rightPiston = leftPiston.clone();
-  rightPiston.position.x = 0.35;
-  rightPiston.rotation.z = -0.15;
-  robotHeadGroup.add(rightPiston);
-
-  // --- SHOULDER ASSEMBLY BASE ---
-  const shoulderGeom = new THREE.BoxGeometry(2.4, 0.25, 0.8);
-  const shoulderBase = new THREE.Mesh(shoulderGeom, darkTitanium);
-  shoulderBase.position.set(0, -2.1, 0.0);
-  robotHeadGroup.add(shoulderBase);
-
-  const shoulderJointGeom = new THREE.SphereGeometry(0.2, 16, 16);
-  const leftShoulderJoint = new THREE.Mesh(shoulderJointGeom, goldMaterial);
-  leftShoulderJoint.position.set(-1.1, -2.1, 0.0);
-  robotHeadGroup.add(leftShoulderJoint);
-
-  const rightShoulderJoint = leftShoulderJoint.clone();
-  rightShoulderJoint.position.x = 1.1;
-  robotHeadGroup.add(rightShoulderJoint);
-
-  // Center group and scale to fit cleanly within the HUD borders
-  robotHeadGroup.position.y = -0.3;
-  robotHeadGroup.scale.set(1.15, 1.15, 1.15);
-
-  // Fade in the WebGL renderer container
-  renderer.domElement.style.opacity = 1;
-
-  // 4. Mouse Interactivity and Normalized Mouse Coordinates
-  const mouse = { x: 0, y: 0 };
-  const targetRotation = { x: 0, y: 0 };
-  const currentRotation = { x: 0, y: 0 };
+  if (!container || !avatar) return;
 
   const handleMouseMove = (e) => {
     const rect = container.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
 
-    // 2D Tilt calculation for SVG overlays
     const rotateY = (x / (rect.width / 2)) * 15; 
     const rotateX = -(y / (rect.height / 2)) * 15;
     
@@ -423,71 +228,19 @@ function initHologramChamber() {
       duration: 0.5,
       ease: 'power2.out'
     });
-
-    // Normalized mouse positions for WebGL LookAt (-1 to 1)
-    mouse.x = (e.clientX - rect.left) / rect.width * 2 - 1;
-    mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-
-    // Define target rotation limits (max 35 degrees = ~0.6 radians)
-    targetRotation.y = mouse.x * 0.65;
-    targetRotation.x = mouse.y * 0.45;
   };
 
   const handleMouseLeave = () => {
-    // Reset SVG overlays
     gsap.to(avatar, {
       rotationY: 0,
       rotationX: 0,
       duration: 0.8,
       ease: 'power2.out'
     });
-
-    // Reset WebGL rotations
-    targetRotation.x = 0;
-    targetRotation.y = 0;
   };
 
   container.addEventListener('mousemove', handleMouseMove);
   container.addEventListener('mouseleave', handleMouseLeave);
-
-  // 5. Animation Render Loop with Linear Interpolation (Lerp) and clock
-  const clock = new THREE.Clock();
-  let reqId = null;
-
-  const animate = () => {
-    reqId = requestAnimationFrame(animate);
-
-    const time = clock.getElapsedTime();
-
-    // Apply linear interpolation (lerp) for ultra-smooth head transitions
-    currentRotation.y += (targetRotation.y - currentRotation.y) * 0.06;
-    currentRotation.x += (targetRotation.x - currentRotation.x) * 0.06;
-
-    robotHeadGroup.rotation.y = currentRotation.y;
-    robotHeadGroup.rotation.x = -currentRotation.x; // invert X axis for natural look-down/up
-
-    // Ambient mechanical breathing / float motion
-    robotHeadGroup.position.y = -0.3 + Math.sin(time * 1.5) * 0.05;
-
-    // Brain status LED pulsing effect
-    const pulse = 1.8 + Math.sin(time * 4.0) * 0.7;
-    cyanGlowMaterial.emissiveIntensity = pulse;
-
-    renderer.render(scene, camera);
-  };
-  animate();
-
-  // 6. Handle Resizing
-  const handleResize = () => {
-    const w = canvasContainer.clientWidth;
-    const h = canvasContainer.clientHeight;
-
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize(w, h);
-  };
-  window.addEventListener('resize', handleResize);
 }
 
 // ==========================================================================

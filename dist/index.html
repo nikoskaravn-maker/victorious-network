@@ -83,58 +83,69 @@
 			font-display: swap;
 		}
 	</style>
-  <script type="module" crossorigin src="/victorious-network/assets/index-CuVt1Rns.js"></script>
-  <link rel="stylesheet" crossorigin href="/victorious-network/assets/index-DAifRhMI.css">
+  <script type="module" crossorigin src="/victorious-network/assets/index-Bzhq-jNz.js"></script>
+  <link rel="stylesheet" crossorigin href="/victorious-network/assets/index-Bkt8d6ZM.css">
 </head>
 
-<body>
+<body class="is-locked">
 	<!--$-->
 	<div class="min-h-screen text-foreground">
-		<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent">
-			<div class="mx-auto max-w-7xl px-6 md:px-10 h-20 flex items-center justify-between">
-				<a href="#top" class="flex items-center gap-3">
-					<img src="/victorious-network/assets/victorious-logo.png" alt="Victorious Network" class="h-12 w-12 object-contain" />
-					<span
-						class="hidden xs:block sm:block font-display text-base sm:text-lg tracking-wide text-gold-gradient">Victorious
-						Network</span>
+		<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent border-b border-[#ebbd57]/5">
+			<div class="mx-auto max-w-7xl px-6 md:px-10 header-inner flex items-center justify-between">
+				<a href="#top" class="flex items-center gap-3 group">
+					<div class="relative flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-br from-[#ebbd57]/15 to-[#010717]/90 border border-[#ebbd57]/20 shadow-[0_0_15px_rgba(212,175,55,0.05)] group-hover:border-[#ebbd57]/50 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.2)] transition-all duration-500 overflow-hidden">
+						<img src="/victorious-network/assets/victorious-logo.png" alt="Victorious Logo" class="h-8 w-8 object-contain group-hover:scale-110 transition-transform duration-500" />
+						<div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out"></div>
+					</div>
+					<div class="flex flex-col">
+						<span class="font-sans text-[10px] tracking-[0.35em] text-[#ebbd57]/60 uppercase font-semibold leading-none mb-1">VICTORIOUS</span>
+						<span class="font-display text-lg tracking-[0.05em] text-gold-gradient font-medium leading-none">NETWORK</span>
+					</div>
 				</a>
-				<nav
-					class="hidden md:flex items-center gap-10 text-sm uppercase tracking-[0.18em] text-muted-foreground">
-					<a href="#about" class="hover:text-gold-soft transition">Ποιοι Είμαστε</a>
-					<a href="#services" class="hover:text-gold-soft transition">Υπηρεσίες</a>
-					<a href="#ai" class="hover:text-gold-soft transition">AI Clones</a>
-					<a href="#platform" class="hover:text-gold-soft transition">Platform</a>
-					<a href="#projects-globe" class="hover:text-gold-soft transition">Projects</a>
-					<a href="#contact" class="hover:text-gold-soft transition">Επικοινωνία</a>
+				<nav class="hidden md:flex items-center gap-8 text-[11px] uppercase tracking-[0.22em] font-medium text-muted-foreground">
+					<a href="#about" class="nav-link">Ποιοι Είμαστε</a>
+					<a href="#services" class="nav-link">Υπηρεσίες</a>
+					<a href="#ai" class="nav-link">AI Clones</a>
+					<a href="#platform" class="nav-link">Platform</a>
+					<a href="#projects-globe" class="nav-link">Projects</a>
+					<a href="#contact" class="nav-link">Επικοινωνία</a>
 				</nav>
 				<div class="flex items-center gap-4">
-					<a href="#contact"
-						class="hidden md:inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] px-5 py-3 rounded-full border border-gold-soft text-gold-soft hover:bg-gold-gradient hover:text-primary-foreground hover:border-transparent transition">Ξεκινήστε
-						→</a>
+					<a href="#contact" class="cta-button hidden md:inline-flex">
+						<span>Ξεκινήστε</span>
+						<span class="arrow">→</span>
+					</a>
 					<!-- Hamburger Menu Button -->
 					<button id="mobile-menu-btn"
-						class="md:hidden flex flex-col justify-between w-6 h-4 text-gold-soft focus:outline-none z-50 cursor-pointer"
+						class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-full border border-[#ebbd57]/20 text-gold-soft hover:bg-[#ebbd57]/5 focus:outline-none z-50 cursor-pointer transition-all duration-300"
 						aria-label="Μενού">
-						<span
-							class="w-full h-[2px] bg-gold-soft rounded transition-all duration-300 origin-center"></span>
-						<span class="w-full h-[2px] bg-gold-soft rounded transition-all duration-300"></span>
-						<span
-							class="w-full h-[2px] bg-gold-soft rounded transition-all duration-300 origin-center"></span>
+						<div class="w-5 h-[1.5px] bg-[#ebbd57] rounded transition-all duration-300 mb-[4px] bar-top"></div>
+						<div class="w-5 h-[1.5px] bg-[#ebbd57] rounded transition-all duration-300 bar-middle"></div>
+						<div class="w-5 h-[1.5px] bg-[#ebbd57] rounded transition-all duration-300 mt-[4px] bar-bottom"></div>
 					</button>
 				</div>
 			</div>
 			<!-- Mobile Menu Dropdown -->
 			<div id="mobile-menu"
-				class="hidden fixed inset-0 top-20 bg-[#010717]/98 backdrop-blur-xl z-40 flex-col items-center justify-center gap-8 text-lg uppercase tracking-[0.2em] text-muted-foreground transition-all duration-300 border-b border-gold-soft/20 h-[calc(100vh-5rem)]">
-				<a href="#about" class="hover:text-gold-soft transition py-2 mobile-link">Ποιοι Είμαστε</a>
-				<a href="#services" class="hover:text-gold-soft transition py-2 mobile-link">Υπηρεσίες</a>
-				<a href="#ai" class="hover:text-gold-soft transition py-2 mobile-link">AI Clones</a>
-				<a href="#platform" class="hover:text-gold-soft transition py-2 mobile-link">Platform</a>
-				<a href="#projects-globe" class="hover:text-gold-soft transition py-2 mobile-link">Projects</a>
-				<a href="#contact" class="hover:text-gold-soft transition py-2 mobile-link">Επικοινωνία</a>
-				<a href="#contact"
-					class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] px-6 py-4 rounded-full border border-gold-soft text-gold-soft hover:bg-gold-gradient hover:text-primary-foreground hover:border-transparent transition mt-4 mobile-link">Ξεκινήστε
-					→</a>
+				class="hidden fixed inset-0 bg-[#010717]/96 backdrop-blur-2xl z-40 flex-col items-center justify-center gap-6 text-[15px] uppercase tracking-[0.25em] text-muted-foreground transition-all duration-500 h-screen w-screen px-10">
+				<!-- Corner brackets for futuristic aesthetic inside menu -->
+				<div class="absolute top-28 left-8 w-6 h-6 border-l border-t border-[#ebbd57]/20"></div>
+				<div class="absolute top-28 right-8 w-6 h-6 border-r border-t border-[#ebbd57]/20"></div>
+				<div class="absolute bottom-12 left-8 w-6 h-6 border-l border-b border-[#ebbd57]/20"></div>
+				<div class="absolute bottom-12 right-8 w-6 h-6 border-r border-b border-[#ebbd57]/20"></div>
+				
+				<nav class="flex flex-col items-center gap-5 mt-8">
+					<a href="#about" class="hover:text-gold-soft transition py-2 mobile-link opacity-0 translate-y-4">Ποιοι Είμαστε</a>
+					<a href="#services" class="hover:text-gold-soft transition py-2 mobile-link opacity-0 translate-y-4">Υπηρεσίες</a>
+					<a href="#ai" class="hover:text-gold-soft transition py-2 mobile-link opacity-0 translate-y-4">AI Clones</a>
+					<a href="#platform" class="hover:text-gold-soft transition py-2 mobile-link opacity-0 translate-y-4">Platform</a>
+					<a href="#projects-globe" class="hover:text-gold-soft transition py-2 mobile-link opacity-0 translate-y-4">Projects</a>
+					<a href="#contact" class="hover:text-gold-soft transition py-2 mobile-link opacity-0 translate-y-4">Επικοινωνία</a>
+					<a href="#contact" class="cta-button mobile-link opacity-0 translate-y-4 mt-6">
+						<span>Ξεκινήστε</span>
+						<span class="arrow">→</span>
+					</a>
+				</nav>
 			</div>
 		</header>
 		<section id="top" class="relative min-h-screen flex items-end overflow-hidden">
@@ -179,6 +190,118 @@
 			<div
 				class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,oklch(0.1_0.04_260/0.7)_100%)]">
 			</div>
+
+			<!-- Desktop Orbit View (Visible on tablet/desktop) -->
+			<div class="orbit-desktop-view">
+				<!-- Back half of the ring (behind the planet, z-index: 9) -->
+				<div class="orbit-ring-line orbit-ring-line-back border-y border-gold-soft/85 py-6 overflow-hidden bg-navy-deep/85">
+					<div class="flex gap-16 animate-marquee-right whitespace-nowrap font-display text-2xl w-full">
+						<div class="flex gap-16 shrink-0 text-foreground/80 orbit-marquee-text">
+							<span>AI Strategy</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Public Relations</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Holograms</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Automation</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Storytelling</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Ecosystem</span>
+							<span class="text-[#ebbd57]">★</span>
+						</div>
+						<div class="flex gap-16 shrink-0 text-foreground/80 orbit-marquee-text" aria-hidden="true">
+							<span>AI Strategy</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Public Relations</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Holograms</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Automation</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Storytelling</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Ecosystem</span>
+							<span class="text-[#ebbd57]">★</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Centered Planet Image (at Z = 0, z-index: 10) -->
+				<img src="/victorious-network/panitis_transparent.png" alt="Victorious Team Planet" class="orbit-planet-marquee" />
+
+				<!-- Front half of the ring (in front of the planet, z-index: 15) -->
+				<div class="orbit-ring-line orbit-ring-line-front border-y border-gold-soft/85 py-6 overflow-hidden bg-navy-deep/85">
+					<div class="flex gap-16 animate-marquee whitespace-nowrap font-display text-2xl w-full">
+						<div class="flex gap-16 shrink-0 text-foreground/80 orbit-marquee-text">
+							<span>AI Strategy</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Public Relations</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Holograms</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Automation</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Storytelling</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Ecosystem</span>
+							<span class="text-[#ebbd57]">★</span>
+						</div>
+						<div class="flex gap-16 shrink-0 text-foreground/80 orbit-marquee-text" aria-hidden="true">
+							<span>AI Strategy</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Public Relations</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Holograms</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Automation</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Storytelling</span>
+							<span class="text-[#ebbd57]">★</span>
+							<span>Ecosystem</span>
+							<span class="text-[#ebbd57]">★</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Mobile Ticker View (Visible on mobile) -->
+			<div class="orbit-mobile-view">
+				<div class="flex gap-16 animate-marquee whitespace-nowrap font-display text-2xl">
+					<div class="flex gap-16 shrink-0">
+						<span class="text-foreground/80">AI Strategy</span>
+						<span class="text-[#ebbd57]">★</span>
+						<span class="text-foreground/80">Public Relations</span>
+						<span class="text-[#ebbd57]">★</span>
+						<span class="text-foreground/80">Holograms</span>
+						<span class="text-[#ebbd57]">★</span>
+						<span class="text-foreground/80">Automation</span>
+						<span class="text-[#ebbd57]">★</span>
+						<span class="text-foreground/80">Storytelling</span>
+						<span class="text-[#ebbd57]">★</span>
+						<span class="text-foreground/80">Ecosystem</span>
+						<span class="text-[#ebbd57]">★</span>
+					</div>
+					<div class="flex gap-16 shrink-0">
+						<span class="text-foreground/80">AI Strategy</span>
+						<span class="text-[#ebbd57]">★</span>
+						<span class="text-foreground/80">Public Relations</span>
+						<span class="text-[#ebbd57]">★</span>
+						<span class="text-foreground/80">Holograms</span>
+						<span class="text-[#ebbd57]">★</span>
+						<span class="text-foreground/80">Automation</span>
+						<span class="text-[#ebbd57]">★</span>
+						<span class="text-foreground/80">Storytelling</span>
+						<span class="text-[#ebbd57]">★</span>
+						<span class="text-foreground/80">Ecosystem</span>
+						<span class="text-[#ebbd57]">★</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Premium Glassmorphic Radial Overlay for Text Readability -->
+			<div class="planet-overlay pointer-events-none"></div>
+
 			<div class="relative mx-auto max-w-7xl px-6 md:px-10 pb-24 md:pb-32 pt-40 w-full hero-content-grid"
 				style="opacity: 0; pointer-events: none;">
 				<p class="text-xs md:text-sm uppercase tracking-[0.4em] text-gold-soft mb-8 animate-shine inline-block">
@@ -203,39 +326,11 @@
 				</div>
 			</div>
 		</section>
-		<section class="border-y border-gold-soft/40 py-6 overflow-hidden bg-navy-deep/40">
-			<div class="flex gap-16 animate-marquee whitespace-nowrap font-display text-2xl md:text-4xl">
-				<div class="flex gap-16 shrink-0">
-					<span class="text-foreground/80">AI Strategy</span>
-					<span class="text-gold-soft">★</span>
-					<span class="text-foreground/80">Public Relations</span>
-					<span class="text-gold-soft">★</span>
-					<span class="text-foreground/80">Holograms</span>
-					<span class="text-gold-soft">★</span>
-					<span class="text-foreground/80">Automation</span>
-					<span class="text-gold-soft">★</span>
-					<span class="text-foreground/80">Storytelling</span>
-					<span class="text-gold-soft">★</span>
-					<span class="text-foreground/80">Ecosystem</span>
-					<span class="text-gold-soft">★</span>
-				</div>
-				<div class="flex gap-16 shrink-0">
-					<span class="text-foreground/80">AI Strategy</span>
-					<span class="text-gold-soft">★</span>
-					<span class="text-foreground/80">Public Relations</span>
-					<span class="text-gold-soft">★</span>
-					<span class="text-foreground/80">Holograms</span>
-					<span class="text-gold-soft">★</span>
-					<span class="text-foreground/80">Automation</span>
-					<span class="text-gold-soft">★</span>
-					<span class="text-foreground/80">Storytelling</span>
-					<span class="text-gold-soft">★</span>
-					<span class="text-foreground/80">Ecosystem</span>
-					<span class="text-gold-soft">★</span>
-				</div>
-			</div>
-		</section>
-		<section id="about" class="mx-auto max-w-7xl px-6 md:px-10 py-32 md:py-40">
+		<div id="page-content" class="hidden opacity-0">
+			<!-- Chapter Separator Divider -->
+			<div class="border-t border-gold-soft/30 w-full"></div>
+
+			<section id="about" class="mx-auto max-w-7xl px-6 md:px-10 py-32 md:py-40">
 			<div class="grid md:grid-cols-12 gap-10 items-start">
 				<p class="md:col-span-3 text-xs uppercase tracking-[0.3em] text-gold-soft">(01) Η ταυτότητά μας</p>
 				<div class="md:col-span-9">
@@ -288,8 +383,7 @@
 					<div class="services-card group">
 						<img src="/victorious-network/assets/service-market-HHuUv8ro.jpg" alt="Market Entry" loading="lazy" width="1280"
 							height="960" class="services-card-img" />
-						<div class="services-card-overlay">
-						</div>
+						<div class="services-card-overlay"></div>
 						<div class="services-card-content">
 							<div class="text-gold-soft font-display text-xs tracking-[0.3em] mb-2">01</div>
 							<h3 class="font-display text-2xl md:text-3xl mb-3 text-gold-gradient">Market Entry</h3>
@@ -303,8 +397,7 @@
 					<div class="services-card group">
 						<img src="/victorious-network/assets/service-software-Dmk1gJZP.jpg" alt="Επικοινωνία &amp; Branding" loading="lazy"
 							width="1280" height="960" class="services-card-img" />
-						<div class="services-card-overlay">
-						</div>
+						<div class="services-card-overlay"></div>
 						<div class="services-card-content">
 							<div class="text-gold-soft font-display text-xs tracking-[0.3em] mb-2">02</div>
 							<h3 class="font-display text-2xl md:text-3xl mb-3 text-gold-gradient">Επικοινωνία &amp;
@@ -318,8 +411,7 @@
 					<div class="services-card group">
 						<img src="/victorious-network/assets/service-market-HHuUv8ro.jpg" alt="Ecosystem Integration" loading="lazy"
 							width="1280" height="960" class="services-card-img" />
-						<div class="services-card-overlay">
-						</div>
+						<div class="services-card-overlay"></div>
 						<div class="services-card-content">
 							<div class="text-gold-soft font-display text-xs tracking-[0.3em] mb-2">03</div>
 							<h3 class="font-display text-2xl md:text-3xl mb-3 text-gold-gradient">Ecosystem Integration
@@ -333,8 +425,7 @@
 					<div class="services-card group">
 						<img src="/victorious-network/assets/service-clones-B-9Pt5dn.jpg" alt="AI Clones &amp; Ολογράμματα" loading="lazy"
 							width="1280" height="960" class="services-card-img" />
-						<div class="services-card-overlay">
-						</div>
+						<div class="services-card-overlay"></div>
 						<div class="services-card-content">
 							<div class="text-gold-soft font-display text-xs tracking-[0.3em] mb-2">04</div>
 							<h3 class="font-display text-2xl md:text-3xl mb-3 text-gold-gradient">AI Clones &amp;
@@ -348,8 +439,7 @@
 					<div class="services-card group">
 						<img src="/victorious-network/assets/service-software-Dmk1gJZP.jpg" alt="Software με Αυτοματισμούς" loading="lazy"
 							width="1280" height="960" class="services-card-img" />
-						<div class="services-card-overlay">
-						</div>
+						<div class="services-card-overlay"></div>
 						<div class="services-card-content">
 							<div class="text-gold-soft font-display text-xs tracking-[0.3em] mb-2">05</div>
 							<h3 class="font-display text-2xl md:text-3xl mb-3 text-gold-gradient">Software με
@@ -363,8 +453,7 @@
 					<div class="services-card group">
 						<img src="/victorious-network/assets/service-experience-DX-l-saP.jpg" alt="Βιωματικές Εμπειρίες AI" loading="lazy"
 							width="1280" height="960" class="services-card-img" />
-						<div class="services-card-overlay">
-						</div>
+						<div class="services-card-overlay"></div>
 						<div class="services-card-content">
 							<div class="text-gold-soft font-display text-xs tracking-[0.3em] mb-2">06</div>
 							<h3 class="font-display text-2xl md:text-3xl mb-3 text-gold-gradient">Βιωματικές Εμπειρίες
@@ -428,8 +517,10 @@
 						</div>
 
 						<div class="hologram-content" id="hologram-interactive-avatar">
-							<!-- Layer 2 & 3: WebGL 3D Canvas Container -->
-							<div class="hologram-layer hologram-avatar-body" id="hologram-3d-webgl-container"></div>
+							<!-- Layer 2 & 3: Core 3D Avatar Image -->
+							<div class="hologram-layer hologram-avatar-body">
+								<img src="/victorious-network/sophia_3d_avatar.png" alt="Sophia AI Clone" class="hologram-avatar-img" />
+							</div>
 
 							<!-- Layer 4: Sophia Brain & Processor Core (Middle) -->
 							<div class="hologram-layer hologram-avatar-neural">
@@ -753,6 +844,7 @@
 				<span class="text-gold-soft">AI-driven storytelling.</span>
 			</div>
 		</footer>
+		</div>
 	</div>
 	<!--/$-->
 	<!-- Project Gallery Modal Overlay -->
@@ -795,31 +887,22 @@
 			mobileMenuBtn.addEventListener('click', () => {
 				const isHidden = mobileMenu.classList.contains('hidden');
 				mobileMenu.classList.toggle('hidden');
-				mobileMenu.classList.toggle('flex');
+				mobileMenu.classList.toggle('active');
+				mobileMenuBtn.classList.toggle('menu-open');
 
-				const lines = mobileMenuBtn.querySelectorAll('span');
 				if (isHidden) {
-					// Open state
-					lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-					lines[1].style.opacity = '0';
-					lines[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+					document.body.style.overflow = 'hidden';
 				} else {
-					// Closed state
-					lines[0].style.transform = 'none';
-					lines[1].style.opacity = '1';
-					lines[2].style.transform = 'none';
+					document.body.style.overflow = '';
 				}
 			});
 
 			mobileLinks.forEach(link => {
 				link.addEventListener('click', () => {
 					mobileMenu.classList.add('hidden');
-					mobileMenu.classList.remove('flex');
-
-					const lines = mobileMenuBtn.querySelectorAll('span');
-					lines[0].style.transform = 'none';
-					lines[1].style.opacity = '1';
-					lines[2].style.transform = 'none';
+					mobileMenu.classList.remove('active');
+					mobileMenuBtn.classList.remove('menu-open');
+					document.body.style.overflow = '';
 				});
 			});
 		}
