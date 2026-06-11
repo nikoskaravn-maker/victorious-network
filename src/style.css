@@ -874,26 +874,6 @@
   display: block;
 }
 
-/* WebGL Canvas Container Styles */
-#hologram-3d-webgl-container {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 3;
-}
-
-#hologram-3d-webgl-container canvas {
-  width: 100% !important;
-  height: 100% !important;
-  display: block;
-  mix-blend-mode: screen;
-  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.45));
-}
 
 .hologram-sophia-brain {
   filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
@@ -1532,10 +1512,64 @@ header.scrolled .header-inner {
 
 @media (max-width: 768px) {
   .orbit-desktop-view {
-    display: none !important;
+    display: flex !important;
   }
   .orbit-mobile-view {
-    display: block !important;
+    display: none !important;
+  }
+  .orbit-planet-marquee {
+    width: 60vw !important;
+    height: 60vw !important;
+  }
+  .orbit-ring-line {
+    width: 85vw !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  .orbit-ring-line .orbit-marquee-text {
+    font-size: 1.1rem !important;
+  }
+  
+  /* Glass Container Mobile Scale */
+  .glass-container {
+    width: 85vw !important;
+    height: 85vw !important;
+  }
+  .glass-depth-bg {
+    width: 72vw !important;
+    height: 72vw !important;
+    border-radius: 20px !important;
+  }
+  .glass-face {
+    width: 72vw !important;
+    height: 72vw !important;
+    border-radius: 18px !important;
+  }
+  .glass-logo-element {
+    width: 50vw !important;
+    height: 50vw !important;
+  }
+  .logo-layer {
+    width: 38vw !important;
+    height: 38vw !important;
+    border-radius: 15px !important;
+  }
+  .logo-title-top {
+    font-size: 1.4rem !important;
+  }
+  .logo-title-bottom {
+    font-size: 0.8rem !important;
+  }
+  .logo-accent {
+    width: 42vw !important;
+    height: 42vw !important;
+    border-radius: 15px !important;
+  }
+
+  /* Hologram Container Mobile Scale */
+  .hologram-container {
+    max-width: 90% !important;
+    height: 110vw !important;
   }
 }
 

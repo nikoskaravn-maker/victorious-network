@@ -105,8 +105,38 @@ function initGlassShatterShowcase() {
     });
   };
 
+  const handleTouchMove = (e) => {
+    if (isShattered) return;
+    const touch = e.touches[0];
+    const rect = container.getBoundingClientRect();
+    const x = touch.clientX - rect.left - rect.width / 2;
+    const y = touch.clientY - rect.top - rect.height / 2;
+    
+    const rotateY = Math.max(-25, Math.min(25, (x / (rect.width / 2)) * 20)); 
+    const rotateX = Math.max(-25, Math.min(25, -(y / (rect.height / 2)) * 20));
+    
+    gsap.to(container, {
+      rotationY: rotateY,
+      rotationX: rotateX,
+      duration: 0.5,
+      ease: 'power2.out'
+    });
+  };
+
+  const handleTouchEnd = () => {
+    gsap.to(container, {
+      rotationY: 0,
+      rotationX: 0,
+      duration: 0.8,
+      ease: 'power2.out'
+    });
+  };
+
   container.addEventListener('mousemove', handleMouseMove);
   container.addEventListener('mouseleave', handleMouseLeave);
+  container.addEventListener('touchmove', handleTouchMove, { passive: true });
+  container.addEventListener('touchend', handleTouchEnd);
+  container.addEventListener('touchcancel', handleTouchEnd);
 
   container.addEventListener('click', () => {
     if (isShattered) return;
@@ -239,8 +269,37 @@ function initHologramChamber() {
     });
   };
 
+  const handleTouchMove = (e) => {
+    const touch = e.touches[0];
+    const rect = container.getBoundingClientRect();
+    const x = touch.clientX - rect.left - rect.width / 2;
+    const y = touch.clientY - rect.top - rect.height / 2;
+
+    const rotateY = Math.max(-20, Math.min(20, (x / (rect.width / 2)) * 15)); 
+    const rotateX = Math.max(-20, Math.min(20, -(y / (rect.height / 2)) * 15));
+    
+    gsap.to(avatar, {
+      rotationY: rotateY,
+      rotationX: rotateX,
+      duration: 0.5,
+      ease: 'power2.out'
+    });
+  };
+
+  const handleTouchEnd = () => {
+    gsap.to(avatar, {
+      rotationY: 0,
+      rotationX: 0,
+      duration: 0.8,
+      ease: 'power2.out'
+    });
+  };
+
   container.addEventListener('mousemove', handleMouseMove);
   container.addEventListener('mouseleave', handleMouseLeave);
+  container.addEventListener('touchmove', handleTouchMove, { passive: true });
+  container.addEventListener('touchend', handleTouchEnd);
+  container.addEventListener('touchcancel', handleTouchEnd);
 }
 
 // ==========================================================================
